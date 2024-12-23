@@ -29,12 +29,20 @@ dependencies {
 	
 }
 
-processResources {
+tasks.withType(ProcessResources).configureEach {
 	inputs.property "version", project.version
 
 	filesMatching("fabric.mod.json") {
 		expand "version": project.version
 	}
+}
+
+remapJar {
+	additionalClientOnlyEntries.add("LICENSE_${project.base.archivesName.get()}")
+}
+
+remapSourcesJar {
+	additionalClientOnlyEntries.add("LICENSE_${project.base.archivesName.get()}")
 }
 
 tasks.withType(JavaCompile).configureEach {
