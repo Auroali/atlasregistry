@@ -1,8 +1,8 @@
 package com.auroali.atlasregistry.test;
 
-import com.auroali.altasregistry.v1.api.AtlasRegistry;
-import com.auroali.altasregistry.v1.api.SpriteAtlasReference;
-import com.auroali.altasregistry.v1.api.SpriteAtlasReferenceBuilder;
+import com.auroali.atlasregistry.v1.api.AtlasRegistry;
+import com.auroali.atlasregistry.v1.api.SpriteAtlasReference;
+import com.auroali.atlasregistry.v1.api.SpriteAtlasReferenceBuilder;
 import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.util.Identifier;
 

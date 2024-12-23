@@ -1,4 +1,4 @@
-package com.auroali.altasregistry.v1.impl;
+package com.auroali.atlasregistry.v1.impl;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;

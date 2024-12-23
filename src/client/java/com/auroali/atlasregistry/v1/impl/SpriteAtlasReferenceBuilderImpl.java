@@ -1,8 +1,8 @@
-package com.auroali.altasregistry.v1.impl;
+package com.auroali.atlasregistry.v1.impl;
 
-import com.auroali.altasregistry.v1.api.AtlasReloadCallback;
-import com.auroali.altasregistry.v1.api.SpriteAtlasReference;
-import com.auroali.altasregistry.v1.api.SpriteAtlasReferenceBuilder;
+import com.auroali.atlasregistry.v1.api.AtlasReloadCallback;
+import com.auroali.atlasregistry.v1.api.SpriteAtlasReference;
+import com.auroali.atlasregistry.v1.api.SpriteAtlasReferenceBuilder;
 import net.minecraft.util.Identifier;
 
 import java.util.Objects;

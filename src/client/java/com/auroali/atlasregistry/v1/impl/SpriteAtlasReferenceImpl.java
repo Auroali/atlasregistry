@@ -1,10 +1,11 @@
-package com.auroali.altasregistry.v1.impl;
+package com.auroali.atlasregistry.v1.impl;
 
-import com.auroali.altasregistry.v1.api.AtlasReloadCallback;
-import com.auroali.altasregistry.v1.api.SpriteAtlasReference;
+import com.auroali.atlasregistry.v1.api.AtlasReloadCallback;
+import com.auroali.atlasregistry.v1.api.SpriteAtlasReference;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.texture.Sprite;
 import net.minecraft.client.texture.SpriteAtlasTexture;
+import net.minecraft.client.util.SpriteIdentifier;
 import net.minecraft.util.Identifier;
 
 public class SpriteAtlasReferenceImpl implements SpriteAtlasReference {
@@ -48,5 +49,10 @@ public class SpriteAtlasReferenceImpl implements SpriteAtlasReference {
     @Override
     public Sprite getSprite(Identifier id) {
         return this.getAtlas().getSprite(id);
+    }
+
+    @Override
+    public SpriteIdentifier createSpriteIdentifier(Identifier id) {
+        return new SpriteIdentifier(this.texturePath, id);
     }
 }

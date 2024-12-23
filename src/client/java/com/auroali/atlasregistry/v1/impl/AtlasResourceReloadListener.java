@@ -1,6 +1,6 @@
-package com.auroali.altasregistry.v1.impl;
+package com.auroali.atlasregistry.v1.impl;
 
-import com.auroali.altasregistry.v1.api.SpriteAtlasReference;
+import com.auroali.atlasregistry.v1.api.SpriteAtlasReference;
 import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener;
 import net.minecraft.client.texture.SpriteLoader;
 import net.minecraft.resource.ResourceManager;
@@ -13,9 +13,9 @@ import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 
-public class AtlasResourceReloadListener implements IdentifiableResourceReloadListener {
+public class AtlasResourceReloadListener implements IdentifiableResourceReloadListener, AutoCloseable {
     protected static final Identifier ID = new Identifier("altasregistry-v1", "reload_listener");
-    protected static final AtlasResourceReloadListener INSTANCE = new AtlasResourceReloadListener();
+    public static final AtlasResourceReloadListener INSTANCE = new AtlasResourceReloadListener();
 
     @Override
     public Identifier getFabricId() {
@@ -39,5 +39,12 @@ public class AtlasResourceReloadListener implements IdentifiableResourceReloadLi
             atlasFutures.add(future);
         }
         return CompletableFuture.allOf(atlasFutures.toArray(new CompletableFuture[AtlasRegistryImpl.ATLASES.size()]));
+    }
+
+    @Override
+    public void close() {
+        for(SpriteAtlasReference reference : AtlasRegistryImpl.ATLASES.values()) {
+            reference.getAtlas().close();
+        }
     }
 }

@@ -10,12 +10,15 @@
 	"contact": {
 		"sources": "https://github.com/Auroali/atlasregistry"
 	},
+	"mixins": [
+		"atlasregistry.mixins.json"
+	],
 	"license": "MIT",
 	"icon": "assets/atlasregistry/icon.png",
 	"environment": "client",
 	"entrypoints": {
 		"client": [
-			"com.auroali.altasregistry.v1.impl.AltasRegistryEntrypoint"
+			"com.auroali.atlasregistry.v1.impl.AltasRegistryEntrypoint"
 		]
 	},
 	"depends": {

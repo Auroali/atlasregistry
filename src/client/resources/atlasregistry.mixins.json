@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "com.auroali.atlasregistry.v1",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [
+    "mixin.MinecraftClientMixin",
+    "mixin.SpriteAtlasTextureAccessor"
+  ]
+}
