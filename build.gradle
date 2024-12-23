@@ -41,18 +41,20 @@ tasks.withType(JavaCompile).configureEach {
 	it.options.release = 17
 }
 
-sourceSets {
-	test {
-		compileClasspath += main.compileClasspath
-		runtimeClasspath += main.runtimeClasspath
-	}
-}
-
 loom {
+	splitEnvironmentSourceSets()
+
+	mods {
+		"atlasregistry" {
+			sourceSet sourceSets.client
+			sourceSet sourceSets.main
+		}
+	}
+
 	runs {
-		testModClient {
+		testClient {
 			inherit client
-			configName "Test Minecraft Client"
+			name = "Test Minecraft Client"
 			source sourceSets.test
 		}
 	}
@@ -66,6 +68,15 @@ java {
 
 	sourceCompatibility = JavaVersion.VERSION_17
 	targetCompatibility = JavaVersion.VERSION_17
+}
+
+sourceSets {
+	test {
+		compileClasspath += main.compileClasspath
+		runtimeClasspath += main.runtimeClasspath
+		compileClasspath += client.compileClasspath
+		runtimeClasspath += client.runtimeClasspath
+	}
 }
 
 jar {
