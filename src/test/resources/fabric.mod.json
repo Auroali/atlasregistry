@@ -1,0 +1,30 @@
+{
+	"schemaVersion": 1,
+	"id": "atlasregistry-test",
+	"version": "${version}",
+	"name": "Atlas Registry - Test Mod",
+	"description": "Test mod for the Atlas Registry library",
+	"authors": [
+		"Auroali"
+	],
+	"contact": {
+		"sources": "https://github.com/Auroali/atlasregistry"
+	},
+	"license": "MIT",
+	"icon": "assets/atlasregistry/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"com.auroali.atlasregistry.test.AtlasRegistryTest"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
