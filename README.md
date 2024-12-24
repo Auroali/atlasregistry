@@ -34,7 +34,7 @@ void onInitializeClient() {
 ```
 Once registered, it will automatically be loaded and populated with sprites whenever the game reloads resources
 
-For the game to know where to load textures for the atlas from, you must create an atlas json file in `assets/<modid>/atlases/<atlas id>`.
+For the game to know where to load textures for the atlas from, you must create an atlas json file in `assets/<modid>/atlases/<atlas id>.json`.
 ```json5
 {
   "sources": [

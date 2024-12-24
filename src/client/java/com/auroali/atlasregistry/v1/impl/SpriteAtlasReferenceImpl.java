@@ -2,6 +2,7 @@ package com.auroali.atlasregistry.v1.impl;
 
 import com.auroali.atlasregistry.v1.api.AtlasReloadCallback;
 import com.auroali.atlasregistry.v1.api.SpriteAtlasReference;
+import com.auroali.atlasregistry.v1.mixin.SpriteAtlasTextureAccessor;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.texture.Sprite;
 import net.minecraft.client.texture.SpriteAtlasTexture;
@@ -42,13 +43,23 @@ public class SpriteAtlasReferenceImpl implements SpriteAtlasReference {
     }
 
     @Override
+    public int getWidth() {
+        return ((SpriteAtlasTextureAccessor)getAtlas()).atlasregistry$getWidth();
+    }
+
+    @Override
+    public int getHeight() {
+        return ((SpriteAtlasTextureAccessor)getAtlas()).atlasregistry$getHeight();
+    }
+
+    @Override
     public int getMipLevel() {
         return this.mipLevel;
     }
 
     @Override
     public void reload() {
-        this.callback.onReload(this.id, this.getAtlas());
+        this.callback.onReload(this.id, this);
     }
 
     @Override

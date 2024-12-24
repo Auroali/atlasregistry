@@ -31,6 +31,16 @@ public class VanillaSpriteAtlasReference implements SpriteAtlasReference {
     }
 
     @Override
+    public int getWidth() {
+        return ((SpriteAtlasTextureAccessor)getAtlas()).atlasregistry$getWidth();
+    }
+
+    @Override
+    public int getHeight() {
+        return ((SpriteAtlasTextureAccessor)getAtlas()).atlasregistry$getHeight();
+    }
+
+    @Override
     public int getMipLevel() {
         return ((SpriteAtlasTextureAccessor)getAtlas()).atlasregistry$getMipLevel();
     }

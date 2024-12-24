@@ -22,6 +22,16 @@ public interface SpriteAtlasReference {
     SpriteAtlasTexture getAtlas();
 
     /**
+     * @return the width of the referenced atlas' texture
+     */
+    int getWidth();
+
+    /**
+     * @return the height of the referenced atlas' texture
+     */
+    int getHeight();
+
+    /**
      * @return the mip level of the referenced atlas
      */
     int getMipLevel();
