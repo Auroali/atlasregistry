@@ -12,6 +12,11 @@ public interface SpriteAtlasReference {
     Identifier getId();
 
     /**
+     * @return the texture for the referenced atlas
+     */
+    Identifier getTexture();
+
+    /**
      * @return the texture atlas that this object references
      */
     SpriteAtlasTexture getAtlas();

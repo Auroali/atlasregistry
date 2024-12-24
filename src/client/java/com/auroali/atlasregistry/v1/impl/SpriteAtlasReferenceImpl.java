@@ -28,6 +28,11 @@ public class SpriteAtlasReferenceImpl implements SpriteAtlasReference {
     }
 
     @Override
+    public Identifier getTexture() {
+        return this.texturePath;
+    }
+
+    @Override
     public SpriteAtlasTexture getAtlas() {
         if(this.texture == null) {
             this.texture = new SpriteAtlasTexture(this.texturePath);

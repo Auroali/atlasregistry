@@ -21,6 +21,11 @@ public class VanillaSpriteAtlasReference implements SpriteAtlasReference {
     }
 
     @Override
+    public Identifier getTexture() {
+        return this.textureId;
+    }
+
+    @Override
     public SpriteAtlasTexture getAtlas() {
         return MinecraftClient.getInstance().getBakedModelManager().getAtlas(this.textureId);
     }
