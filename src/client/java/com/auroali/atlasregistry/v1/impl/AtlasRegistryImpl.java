@@ -14,6 +14,10 @@ public class AtlasRegistryImpl {
         if(reference instanceof VanillaSpriteAtlasReference)
             throw new IllegalArgumentException("Tried registering a VanillaSpriteAtlasReference to the atlas registry");
 
+        if(ATLASES.containsKey(reference.getId()))
+            throw new RuntimeException("Atlas " + reference.getId() + " is already present in the registry.");
+
+
         ATLASES.put(reference.getId(), reference);
         ATLASES_BY_TEXTURE.put(reference.getTexture(), reference);
     }
