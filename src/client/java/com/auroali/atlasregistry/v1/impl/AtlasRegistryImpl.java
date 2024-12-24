@@ -1,7 +1,6 @@
 package com.auroali.atlasregistry.v1.impl;
 
 import com.auroali.atlasregistry.v1.api.SpriteAtlasReference;
-import com.auroali.atlasregistry.v1.api.VanillaAtlasReferences;
 import net.minecraft.util.Identifier;
 
 import java.util.HashMap;

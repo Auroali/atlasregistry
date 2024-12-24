@@ -5,7 +5,6 @@ import com.auroali.atlasregistry.v1.api.VanillaAtlasReferences;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.texture.Sprite;
-import net.minecraft.client.texture.SpriteAtlasTexture;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
