@@ -6,6 +6,7 @@ import net.minecraft.client.texture.SpriteAtlasTexture;
 
 /**
  * Atlas references for vanilla built-in atlases
+ * <br> These <i>should not</i> be registered in the atlas registry!
  */
 public class VanillaAtlasReferences {
     public static final SpriteAtlasReference BLOCKS = new VanillaSpriteAtlasReference(SpriteAtlasTexture.BLOCK_ATLAS_TEXTURE);
