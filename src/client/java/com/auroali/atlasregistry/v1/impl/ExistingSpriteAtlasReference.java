@@ -8,10 +8,10 @@ import net.minecraft.client.texture.SpriteAtlasTexture;
 import net.minecraft.client.util.SpriteIdentifier;
 import net.minecraft.util.Identifier;
 
-public class VanillaSpriteAtlasReference implements SpriteAtlasReference {
+public class ExistingSpriteAtlasReference implements SpriteAtlasReference {
     final Identifier textureId;
 
-    public VanillaSpriteAtlasReference(Identifier id) {
+    public ExistingSpriteAtlasReference(Identifier id) {
         this.textureId = id;
     }
 
