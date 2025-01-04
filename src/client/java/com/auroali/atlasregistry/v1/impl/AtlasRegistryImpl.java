@@ -12,7 +12,7 @@ public class AtlasRegistryImpl {
 
     public static void register(SpriteAtlasReference reference) {
         if(reference instanceof ExistingSpriteAtlasReference)
-            throw new IllegalArgumentException("Tried registering an ExistingSpriteAtlasReference to the atlas registry");
+            throw new IllegalArgumentException("Could not register atlas " + reference.getId() + ": Tried registering an ExistingSpriteAtlasReference to the atlas registry");
 
         if(frozen)
             throw new RuntimeException("Could not register atlas " + reference.getId() + ": Registry is frozen");
@@ -20,12 +20,11 @@ public class AtlasRegistryImpl {
         if(ATLASES.containsKey(reference.getId()))
             throw new RuntimeException("Could not register atlas " + reference.getId() + ": ID is already present in the registry");
 
-
         ATLASES.put(reference.getId(), reference);
         ATLASES_BY_TEXTURE.put(reference.getTexture(), reference);
     }
 
     public static void freeze() {
-
+        frozen = true;
     }
 }

@@ -24,6 +24,7 @@ public class AtlasResourceReloadListener implements IdentifiableResourceReloadLi
 
     @Override
     public CompletableFuture<Void> reload(Synchronizer synchronizer, ResourceManager manager, Profiler prepareProfiler, Profiler applyProfiler, Executor prepareExecutor, Executor applyExecutor) {
+        AtlasRegistryImpl.freeze();
         List<CompletableFuture<Void>> atlasFutures = new ArrayList<>(AtlasRegistryImpl.ATLASES.size());
         for(Map.Entry<Identifier, SpriteAtlasReference> entry : AtlasRegistryImpl.ATLASES.entrySet()) {
             Identifier id = entry.getKey();
