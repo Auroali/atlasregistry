@@ -29,8 +29,8 @@ public class AtlasResourceReloadListener implements IdentifiableResourceReloadLi
         for(Map.Entry<Identifier, SpriteAtlasReference> entry : AtlasRegistryImpl.ATLASES.entrySet()) {
             Identifier id = entry.getKey();
             SpriteAtlasReference reference = entry.getValue();
-            CompletableFuture<Void> future = SpriteLoader.fromAtlas(reference.getAtlas())
-                    .load(manager, id, reference.getMipLevel(), prepareExecutor)
+            CompletableFuture<Void> future = reference.getLoader()
+                    .load(manager, reference, prepareExecutor)
                     .thenCompose(SpriteLoader.StitchResult::whenComplete)
                     .thenCompose(synchronizer::whenPrepared)
                     .thenAcceptAsync(stitchResult -> {

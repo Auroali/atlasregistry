@@ -28,9 +28,12 @@ public class TestScreen extends Screen {
     @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
         super.render(context, mouseX, mouseY, delta);
-        context.drawSprite(0, 0, 0, 32, 32, this.atlasTest);
-        context.drawSprite(32, 0, 0, 16, 16, this.copperBlock);
-        context.drawSprite(48, 0, 0, 16, 16, this.diamond);
+        if(this.atlasTest != null)
+            context.drawSprite(0, 0, 0, 32, 32, this.atlasTest);
+        if(this.copperBlock != null)
+            context.drawSprite(32, 0, 0, 16, 16, this.copperBlock);
+        if(this.diamond != null)
+            context.drawSprite(48, 0, 0, 16, 16, this.diamond);
         SpriteAtlasReference otherAtlas = AtlasRegistryTest.OTHER_TEST_ATLAS;
         context.drawTexture(otherAtlas.getTexture(), 0, 32, 0, 0, otherAtlas.getWidth(), otherAtlas.getHeight(), otherAtlas.getWidth(), otherAtlas.getHeight());
         SpriteAtlasReference blocks = VanillaAtlasReferences.BLOCKS;

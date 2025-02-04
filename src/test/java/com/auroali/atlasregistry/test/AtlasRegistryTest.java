@@ -1,6 +1,7 @@
 package com.auroali.atlasregistry.test;
 
 import com.auroali.atlasregistry.v1.api.AtlasRegistry;
+import com.auroali.atlasregistry.v1.api.CustomSpriteAtlasLoader;
 import com.auroali.atlasregistry.v1.api.SpriteAtlasReference;
 import com.auroali.atlasregistry.v1.api.SpriteAtlasReferenceBuilder;
 import net.fabricmc.api.ClientModInitializer;
@@ -16,6 +17,7 @@ public class AtlasRegistryTest implements ClientModInitializer {
             .build();
     public static final SpriteAtlasReference OTHER_TEST_ATLAS = SpriteAtlasReferenceBuilder.create(new Identifier("atlasregistry-test", "test2"))
             .mipLevel(3)
+            .loader(CustomSpriteAtlasLoader.DEFAULT)
             .build();
 
     public static final KeyBinding OPEN_TEST_SCREEN = new KeyBinding(
