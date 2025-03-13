@@ -12,7 +12,6 @@ import net.minecraft.util.Identifier;
 
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Spliterator;
 import java.util.function.Consumer;
 import java.util.function.IntSupplier;
@@ -45,7 +44,7 @@ public class SpriteAtlasReferenceImpl implements SpriteAtlasReference {
 
     @Override
     public SpriteAtlasTexture getAtlas() {
-        if(this.texture == null) {
+        if (this.texture == null) {
             this.texture = new SpriteAtlasTexture(this.texturePath);
             MinecraftClient.getInstance().getTextureManager().registerTexture(this.texturePath, this.texture);
         }
@@ -54,12 +53,12 @@ public class SpriteAtlasReferenceImpl implements SpriteAtlasReference {
 
     @Override
     public int getWidth() {
-        return ((SpriteAtlasTextureAccessor)getAtlas()).atlasregistry$getWidth();
+        return ((SpriteAtlasTextureAccessor) getAtlas()).atlasregistry$getWidth();
     }
 
     @Override
     public int getHeight() {
-        return ((SpriteAtlasTextureAccessor)getAtlas()).atlasregistry$getHeight();
+        return ((SpriteAtlasTextureAccessor) getAtlas()).atlasregistry$getHeight();
     }
 
     @Override
@@ -79,7 +78,7 @@ public class SpriteAtlasReferenceImpl implements SpriteAtlasReference {
 
     @Override
     public Collection<Sprite> getSprites() {
-        return ((SpriteAtlasTextureAccessor)this.getAtlas()).atlasregistry$getSprites().values();
+        return ((SpriteAtlasTextureAccessor) this.getAtlas()).atlasregistry$getSprites().values();
     }
 
     @Override
@@ -94,16 +93,16 @@ public class SpriteAtlasReferenceImpl implements SpriteAtlasReference {
 
     @Override
     public Iterator<Sprite> iterator() {
-        return ((SpriteAtlasTextureAccessor)this.getAtlas()).atlasregistry$getSprites().values().iterator();
+        return ((SpriteAtlasTextureAccessor) this.getAtlas()).atlasregistry$getSprites().values().iterator();
     }
 
     @Override
     public void forEach(Consumer<? super Sprite> action) {
-        ((SpriteAtlasTextureAccessor)this.getAtlas()).atlasregistry$getSprites().values().forEach(action);
+        ((SpriteAtlasTextureAccessor) this.getAtlas()).atlasregistry$getSprites().values().forEach(action);
     }
 
     @Override
     public Spliterator<Sprite> spliterator() {
-        return ((SpriteAtlasTextureAccessor)this.getAtlas()).atlasregistry$getSprites().values().spliterator();
+        return ((SpriteAtlasTextureAccessor) this.getAtlas()).atlasregistry$getSprites().values().spliterator();
     }
 }

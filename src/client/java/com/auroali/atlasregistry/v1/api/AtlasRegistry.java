@@ -5,10 +5,15 @@ import net.minecraft.util.Identifier;
 
 import java.util.Objects;
 
+/**
+ * Allows registering custom sprite atlases
+ * @since 1.0.0
+ */
 public class AtlasRegistry {
     /**
      * Registers a texture atlas
      * @param atlas the atlas reference to be registered
+     * @since 1.0.0
      */
     public static void register(SpriteAtlasReference atlas) {
         Objects.requireNonNull(atlas);
@@ -19,6 +24,7 @@ public class AtlasRegistry {
      * Returns a registered atlas
      * @param id the id of the atlas
      * @return the sprite atlas reference for the given id, or null if it doesn't exist
+     * @since 1.0.0
      */
     public static SpriteAtlasReference get(Identifier id) {
         return AtlasRegistryImpl.ATLASES.get(id);
