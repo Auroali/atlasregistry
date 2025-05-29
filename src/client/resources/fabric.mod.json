@@ -13,7 +13,7 @@
 	"mixins": [
 		"atlasregistry.mixins.json"
 	],
-	"license": "MIT",
+	"license": "GNU LGPLv3",
 	"icon": "assets/atlasregistry/icon.png",
 	"environment": "client",
 	"entrypoints": {
